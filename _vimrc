@@ -16,5 +16,7 @@ set ignorecase
 set smartcase
 syntax enable
 nmap ; :
+map <Leader>d y'>p
+map <Leader>D Vyp
 au BufReadPost *.cshtml set syntax=html
 noremap <C-f> :copen<CR>:Ag --ignore-dir build --ignore-dir client/js/bundles -i 
