@@ -20,3 +20,8 @@ map <Leader>d y'>p
 map <Leader>D Vyp
 au BufReadPost *.cshtml set syntax=html
 noremap <C-f> :copen<CR>:Ag --ignore-dir build --ignore-dir client/js/bundles -i 
+nnoremap <S-h> gT
+nnoremap <S-l> gt
+nnoremap <S-Left> gT
+nnoremap <S-Right> g
+nmap <Leader>fm gg=
