@@ -25,3 +25,7 @@ nnoremap <S-l> gt
 nnoremap <S-Left> gT
 nnoremap <S-Right> g
 nmap <Leader>fm gg=
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
