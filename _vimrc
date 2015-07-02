@@ -1,3 +1,4 @@
+let mapleader = "\<Space>"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 execute pathogen#infect()
@@ -29,3 +30,12 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+nmap <Leader>t :NERDTree<Enter>
+nnoremap <Leader>w :w<CR>
+nmap <Leader><Leader> V
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
