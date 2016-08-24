@@ -39,3 +39,5 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
