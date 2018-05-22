@@ -25,6 +25,7 @@ set wildmenu
 set completeopt+=longest
 set t_Co=256
 set cmdheight=1
+set background=dark
 
 "let mapleader="\\"
 let mapleader = "\<Space>"
@@ -33,7 +34,8 @@ filetype off                  " required
 
 let g:elm_format_autosave = 1
 
-colorscheme koehler
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme gruvbox
 let g:netrw_liststyle=3
 nmap ; :
 map <Leader>d y'>p
@@ -67,7 +69,20 @@ call plug#begin()
 
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'eagletmt/ghcmod-vim'
 Plug 'shougo/vimproc.vim', {'do' : 'make'}
+Plug 'sbdchd/neoformat' 
+Plug 'vim-airline/vim-airline'
+
+
+let g:neoformat_enabled_haskell = ['stylishhaskell', 'brittany']
+let g:neoformat_run_all_formatters = 1
+let g:neoformat_only_msg_on_error = 1
+let g:neoformat_try_formatprg = 0
+
+" Neoformat on save
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
 
 call plug#end()
