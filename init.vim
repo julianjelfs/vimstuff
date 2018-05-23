@@ -1,4 +1,4 @@
-syntax enable
+syntax on
 filetype plugin indent on
 
 set nocp
@@ -64,6 +64,11 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 imap jj <Esc>
+nnoremap <Leader>g :Grepper -tool ack<cr>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
 
 call plug#begin()
 
@@ -72,6 +77,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'shougo/vimproc.vim', {'do' : 'make'}
 Plug 'sbdchd/neoformat' 
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-commentary'
+Plug 'mhinz/vim-grepper'
+Plug 'neovimhaskell/haskell-vim'
 
 
 let g:neoformat_enabled_haskell = ['stylishhaskell', 'brittany']
