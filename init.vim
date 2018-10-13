@@ -84,18 +84,18 @@ Plug 'sbdchd/neoformat'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-grepper'
-Plug 'elmcast/elm-vim'
 Plug 'neomake/neomake'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'frigoeu/psc-ide-vim'
 Plug 'purescript-contrib/purescript-vim'
 Plug 'godlygeek/tabular'
 
-let g:neoformat_enabled_haskell = ['stylishhaskell', 'brittany']
-let g:neoformat_run_all_formatters = 1
-let g:neoformat_only_msg_on_error = 1
-let g:neoformat_try_formatprg = 0
-let g:neomake_haskell_enabled_makers = ['hlint']
+" React stuff
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
+Plug 'w0rp/ale'
+Plug 'skywind3000/asyncrun.vim'
 
 let g:haskell_indent_disable          = 1
 let g:haskell_classic_highlighting    = 1
@@ -111,11 +111,20 @@ let g:haskell_indent_guard            = 4
 let g:haskell_indent_case_alternative = 4
 let g:cabal_indent_section            = 4
 
-" Neoformat on save
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {'javascript.jsx':{'extends':'jsx'}}
+
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\   'haskell': ['stylish-haskell', 'brittany'],
+\}
+
+let g:ale_linters = {
+\ 'haskell': ['hlint'],
+\}
 
 call plug#end()
 
